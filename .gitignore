@@ -17,3 +17,5 @@ hs_err_pid*
 /secant/build/
 /false-position/nbproject/private/
 /false-position/build/
+/modified-secant/nbproject/private/
+/modified-secant/build/
