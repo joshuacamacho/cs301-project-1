@@ -15,7 +15,7 @@ public class Newton {
    * @param args the command line arguments
    */
   public static void main(String[] args) {
-    newton(1.0f, 20, 0.001f, 'a');
+    newton(1.0f, 20, 0.001f, 'b');
   }
       //   f(x) = 2x^3 – 11.7x^2 + 17.7x – 5
     private static float equationA(float a) {
@@ -28,21 +28,37 @@ public class Newton {
     }
     
     private static void newton(float x, int nmax, float epsilon, char equation) {
-        float fx, fprimex,fpx;
-        if(equation == 'a'){
-            fx = equationA(x);
-        }else{
-            fx = equationB(x);
-        }
+        float fx, fprimex,fpx,error;
         
-        System.out.println("X = "+x+" fx ="+fx);
+        error=0;
         
-        for(int n=1; n<nmax; n++){
+        
+        for(int n=0; n<nmax; n++){
            if(equation == 'a'){
-               fpx = equationAprime(x);
+               fx = equationA(x);
+               fprimex = equationAprime(x);
            }else{
-               fpx = equationBprime(x);
+               fx = equationB(x);
+               fprimex = equationBprime(x);
            }
+           
+           System.out.print(String.format("\nn = %-5s x = %-15s f(x) = %-15s",n,x,fx));
+           float oldx = x;
+           x -= fx/fprimex;
+           if(equation == 'a'){
+             error = (float)Math.abs((x-oldx)/x);
+           }else{
+             error = (float)Math.abs((0.56714329f - x)/ 0.56714329f);
+           }
+           
+           System.out.print(String.format("x+1 = %-15s error = %-15s",x,error));
+           
+           if(error<epsilon){
+              System.out.println("\nConvergence reached at x = "+x+" f(x) = "+fx);
+              return;
+          }
+           
+           
         }
                 
     }

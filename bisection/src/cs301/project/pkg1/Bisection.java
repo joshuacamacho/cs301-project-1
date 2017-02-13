@@ -8,7 +8,7 @@ public class Bisection {
 
     public static void main(String[] args) {
        
-        bisection(0.5f,1.0f,20,0.0001f,'b');
+        bisection(0.1f,1.0f,20,0.001f,'b');
     }
 
   private static void bisection(float a, float b, float nmax, float epsilon, char equation) {
@@ -24,13 +24,14 @@ public class Bisection {
         fb = equationB(b);
         fc = equationB(c);
     }
-    System.out.print(String.format(" f(a) = %-15s f(b) = %-15s f(c) = %-15s",fa,fb,fc));    
-      float error;
-
-      if( (fa * fb) >= 0 ) {
+    if( (fa * fb) >= 0 ) {
           System.out.println("invalid starting points f(a) * f(b) >= 0");
           return;
       }
+    System.out.print(String.format(" f(a) = %-15s f(b) = %-15s f(c) = %-15s",fa,fb,fc));    
+      float error;
+
+      
 
       for(int n=1; n<nmax; n++){
           if(fa * fc < 0 ){

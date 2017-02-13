@@ -12,3 +12,6 @@
 hs_err_pid*
 /newton/nbproject/private/
 /newton/build/
+/bisection/dist/
+/secant/nbproject/private/
+/secant/build/
