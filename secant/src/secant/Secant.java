@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package secant;
-
+import java.util.Scanner;
 /**
  *
  * @author Josh
@@ -15,7 +15,17 @@ public class Secant {
    * @param args the command line arguments
    */
   public static void main(String[] args) {
-    secant(0, 1.0f , 100, 0.01f, 'b');
+    
+     Scanner scan = new Scanner(System.in);
+       System.out.println("Enter a");
+       float a = scan.nextFloat();
+        System.out.println("Enter b");
+       float b = scan.nextFloat();
+       System.out.println("Enter a or b for equation a or b");
+       String eq = scan.next();
+    
+    //arguments a, b, nmax, epsilon, equation(a or b)
+    secant(a, b , 100, 0.01f, eq.charAt(0));
   }
 
   private static void secant(float a, float b, int nmax, float epsilon, char equation) {

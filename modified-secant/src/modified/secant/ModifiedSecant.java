@@ -4,18 +4,21 @@
  * and open the template in the editor.
  */
 package modified.secant;
+import java.util.Scanner;
 
-/**
- *
- * @author Josh
- */
+
 public class ModifiedSecant {
 
-  /**
-   * @param args the command line arguments
-   */
   public static void main(String[] args) {
-    modifiedsecant(1, 0.01f , 100, 0.01f, 'b');
+     Scanner scan = new Scanner(System.in);
+       System.out.println("Enter x");
+       float x = scan.nextFloat();
+       System.out.println("Enter a or b for equation a or b");
+       String eq = scan.next();
+    
+    
+    //arguments ( x , delta, nmax, epsilon, equation letter (a or b)
+    modifiedsecant(x, 0.01f , 100, 0.01f, eq.charAt(0));
   }
   
   private static void modifiedsecant(float x, float delta, int nmax, float epsilon, char equation) {

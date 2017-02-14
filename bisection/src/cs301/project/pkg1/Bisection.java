@@ -1,5 +1,5 @@
 package cs301.project.pkg1;
-
+import java.util.Scanner;
 /**
  *
  * @author Josh
@@ -7,8 +7,16 @@ package cs301.project.pkg1;
 public class Bisection {
 
     public static void main(String[] args) {
+      Scanner scan = new Scanner(System.in);
+       System.out.println("Enter a");
+       float a = scan.nextFloat();
+       System.out.println("Enter b");
+       float b = scan.nextFloat();
+       System.out.println("Enter a or b for equation a or b");
+       String eq = scan.next();
        
-        bisection(0,1.0f,20,0.01f,'b');
+       // parameters a, b, nmax, epsilon, equation(a or b)
+       bisection(a,b,100,0.01f,eq.charAt(0));
     }
 
   private static void bisection(float a, float b, float nmax, float epsilon, char equation) {
@@ -46,7 +54,7 @@ public class Bisection {
           if(equation =='a'){
               error = ( nextC - c)/nextC;
           }else{
-              error = ( 0.56714329f - c)/ 0.56714329f;
+              error = ( 0.56714329f - nextC)/ 0.56714329f;
           }
           System.out.print("Error = "+Math.abs(error));
           c=nextC;

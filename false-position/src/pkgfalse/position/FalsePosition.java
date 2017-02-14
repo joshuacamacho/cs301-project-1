@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package pkgfalse.position;
-
+import java.util.Scanner;
 /**
  *
  * @author Josh
@@ -15,7 +15,16 @@ public class FalsePosition {
    * @param args the command line arguments
    */
   public static void main(String[] args) {
-     falseposition(0,1.0f,20,0.01f,'b');
+     Scanner scan = new Scanner(System.in);
+       System.out.println("Enter a");
+       float a = scan.nextFloat();
+        System.out.println("Enter b");
+       float b = scan.nextFloat();
+       System.out.println("Enter a or b for equation a or b");
+       String eq = scan.next();
+    
+    //parameters a, b, nmax, epsilon, equation(a or b)
+     falseposition(a,b,100,0.01f,eq.charAt(0));
   }
 
   private static void falseposition(float a, float b, int nmax, float epsilon, char equation) {
@@ -46,10 +55,10 @@ public class FalsePosition {
         error = (float)Math.abs( (0.56714329f - c) / 0.56714329f );
       }
       
-      System.out.print(String.format("\nn = %-5s a = %-15s b = %-15s c = %-15s f(a) = %-15s f(b) = %-15s f(c) = %-15s error = %-15s", n, a,b, c, fa, fb,fc,error));
+      System.out.print(String.format("\nn = %-5s a = %-15s b = %-15s c = %-15s f(c) = %-15s error = %-15s", n, a,b, c,fc,error));
       
        if(error<epsilon){
-              System.out.println("\nConvergence reached at c = "+c+" f(x) = "+fc);
+              System.out.println("\nConvergence reached at c = "+c+"\nf(c) = "+fc);
               return;
        }
        
