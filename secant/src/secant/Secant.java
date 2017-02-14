@@ -15,7 +15,7 @@ public class Secant {
    * @param args the command line arguments
    */
   public static void main(String[] args) {
-    secant(0.2f, 1.0f , 100, 0.001f, 'b');
+    secant(0, 1.0f , 100, 0.01f, 'b');
   }
 
   private static void secant(float a, float b, int nmax, float epsilon, char equation) {

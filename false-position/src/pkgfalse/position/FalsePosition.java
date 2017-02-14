@@ -15,7 +15,7 @@ public class FalsePosition {
    * @param args the command line arguments
    */
   public static void main(String[] args) {
-     falseposition(0.1f,1.0f,20,0.001f,'a');
+     falseposition(0,1.0f,20,0.01f,'b');
   }
 
   private static void falseposition(float a, float b, int nmax, float epsilon, char equation) {

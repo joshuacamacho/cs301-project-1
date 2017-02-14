@@ -8,7 +8,7 @@ public class Bisection {
 
     public static void main(String[] args) {
        
-        bisection(0.1f,1.0f,20,0.001f,'b');
+        bisection(0,1.0f,20,0.01f,'b');
     }
 
   private static void bisection(float a, float b, float nmax, float epsilon, char equation) {

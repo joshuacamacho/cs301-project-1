@@ -15,7 +15,7 @@ public class ModifiedSecant {
    * @param args the command line arguments
    */
   public static void main(String[] args) {
-    modifiedsecant(0.2f, 1.0f , 100, 0.001f, 'a');
+    modifiedsecant(1, 0.01f , 100, 0.01f, 'b');
   }
   
   private static void modifiedsecant(float x, float delta, int nmax, float epsilon, char equation) {
@@ -38,7 +38,7 @@ public class ModifiedSecant {
       }else{
         error = (float)Math.abs((0.56714329f - x )/0.56714329f);
       }
-      System.out.print(String.format("\nn = %-5s x = %-15s x+1 = %-15s f(x) = %-15s error = %-15s",n,delta,x,fx,error));
+      System.out.print(String.format("\nn = %-5s x = %-15s x+1 = %-15s f(x) = %-15s error = %-15s",n,lastx,x,fx,error));
       
       if(error<epsilon){
               System.out.println("\nConvergence reached at x = "+x);

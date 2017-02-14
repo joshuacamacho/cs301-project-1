@@ -15,7 +15,7 @@ public class Newton {
    * @param args the command line arguments
    */
   public static void main(String[] args) {
-    newton(1.0f, 20, 0.001f, 'b');
+    newton(1, 20, 0.01f, 'b');
   }
       //   f(x) = 2x^3 – 11.7x^2 + 17.7x – 5
     private static float equationA(float a) {
