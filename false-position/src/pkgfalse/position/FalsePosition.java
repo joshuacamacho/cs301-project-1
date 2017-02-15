@@ -55,8 +55,9 @@ public class FalsePosition {
         error = (float)Math.abs( (0.56714329f - c) / 0.56714329f );
       }
       
-      System.out.print(String.format("\nn = %-5s a = %-15s b = %-15s c = %-15s f(c) = %-15s error = %-15s", n, a,b, c,fc,error));
-      
+      System.out.print(String.format("\nn = %-5s a = %-15s b = %-15s c = %-15s f(c) = %-15s", n, a,b, c,fc));
+      if(equation=='a' && n ==0) ;//
+      else System.out.print(String.format("error = %-15s",error));
        if(error<epsilon){
               System.out.println("\nConvergence reached at c = "+c+"\nf(c) = "+fc);
               return;

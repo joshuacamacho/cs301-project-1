@@ -17,7 +17,7 @@ public class ModifiedSecant {
        String eq = scan.next();
     
     
-    //arguments ( x , delta, nmax, epsilon, equation letter (a or b)
+    //arguments ( x , delta, nmax, epsilon, equation 2letter (a or b)
     modifiedsecant(x, 0.01f , 100, 0.01f, eq.charAt(0));
   }
   
@@ -41,8 +41,9 @@ public class ModifiedSecant {
       }else{
         error = (float)Math.abs((0.56714329f - x )/0.56714329f);
       }
-      System.out.print(String.format("\nn = %-5s x = %-15s x+1 = %-15s f(x) = %-15s error = %-15s",n,lastx,x,fx,error));
-      
+      System.out.print(String.format("\nn = %-5s x = %-15s x+1 = %-15s f(x) = %-15s",n,lastx,x,fx));
+      if(equation=='a' && n ==0) ;//
+      else System.out.print(String.format("error = %-15s",error));
       if(error<epsilon){
               System.out.println("\nConvergence reached at x = "+x);
               return;

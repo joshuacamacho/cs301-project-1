@@ -48,8 +48,9 @@ public class Secant {
       }else{
         error = (float)Math.abs((0.56714329f - a )/0.56714329f);
       }
-      System.out.print(String.format("\nn = %-5s x-1 = %-15s x = %-15s x+1 = %-15s error = %-15s",n,lastb,b,a,error));
-      
+      System.out.print(String.format("\nn = %-5s x-1 = %-15s x = %-15s x+1 = %-15s",n,lastb,b,a));
+      if(equation=='a' && n ==0) ;//
+      else System.out.print(String.format("error = %-15s",error));
       if(error<epsilon){
               System.out.println("\nConvergence reached at x = "+a);
               return;
